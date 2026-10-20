@@ -51,7 +51,13 @@ a {
 .sidebar {
   width: 256px;
   min-width: 256px;
-  min-height: 100vh;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 0;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   background: #102941;
@@ -1156,8 +1162,13 @@ a {
   }
 
   .sidebar {
+    position: static;
+    top: auto;
+    align-self: auto;
     width: 100%;
-    min-height: auto;
+    height: auto;
+    min-height: 0;
+    overflow: visible;
     padding: 16px;
   }
 
