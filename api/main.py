@@ -1,4 +1,5 @@
 from datetime import datetime, timezone
+from os import getenv
 from time import perf_counter
 from typing import Any
 
@@ -29,8 +30,15 @@ app = FastAPI(
     version="1.0.0",
 )
 
+FRONTEND_ORIGIN = getenv("FRONTEND_ORIGIN", "").strip().rstrip("/")
+
 app.add_middleware(
     CORSMiddleware,
+    allow_origins=(
+        [FRONTEND_ORIGIN]
+        if FRONTEND_ORIGIN
+        else []
+    ),
     allow_origin_regex=(
         r"^http://(localhost|127\.0\.0\.1):"
         r"517[3-9]$"

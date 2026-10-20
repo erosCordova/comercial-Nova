@@ -289,7 +289,7 @@ export async function runSegmentation(
     }
 
     throw new Error(
-      "No se pudo conectar con la API Python. Verifica que esté funcionando en el puerto 8000.",
+      "No se pudo conectar con la API Python. Comprueba la conexión y la URL configurada.",
     );
   }
 
