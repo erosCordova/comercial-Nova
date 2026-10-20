@@ -44,3 +44,5 @@ __pycache__/
 credentials.json
 secrets.json
 evidencias/validacion-*/
+
+.main-before-nova.bak
